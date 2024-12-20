@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Autoregressive Speech Synthesis with Next-Distribution Prediction</title>
+  <meta name="generator" content="Jekyll v3.9.0">
+  <meta property="og:title" content="TODO: title">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .image-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .image-box {
+      flex: 1;
+      text-align: center;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1001.0" data-gr-ext-installed="">
+  <section class="page-header">
+
+
+  </section>
+
+  <section class="main-content">
+    <h1 id="">
+      <center>Autoregressive Speech Synthesis with Next-Distribution Prediction</center>
+    </h1>
+    <!-- <center><h2>Technical report, work in progress</h2></center> -->
+    <center>Xinfa Zhu, Wenjie Tain, and Lei Xie</center>
+    <center><a href="http://www.npu-aslp.org">Audio, Speech and Language Processing Group (ASLP@NPU), School of Computer
+        Science,</br>Northwestern Polytechnical University, Xi'an, China </a></center>
+
+    <h2>0. Contents</h2>
+    <ol>
+      <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#synthesis0">Zero-shot TTS on the libriTTS teset-clean set</a></li>
+      <li><a href="#synthesis1">Zero-shot expressiveness transfer TTS on the ESD corpus</a></li>
+      <li><a href="#synthesis2">Zero-shot accent transfer TTS on the VCTK corpus</a></li>
+      <li><a href="#synthesis3">Unconditional TTS</a></li>
+      <li><a href="#synthesis4">Celebrity imitation</a></li>
+    </ol>
+    <p>Work in progress. This page is for research demonstration purposes only.</p>
+
+    <h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
+    <p> We introduce KALL-E, a novel autoregressive (AR) language
+      modeling approach with next-distribution prediction for text-to-speech (TTS) synthesis. Unlike existing methods,
+      KALL-E directly models and predicts the continuous speech distribution conditioned on text without relying on VAE-
+      or diffusion-based components.
+      Specifically, we use WaveVAE to extract continuous speech distributions from waveforms instead of using discrete
+      speech tokens. A single AR language model predicts these continuous speech distributions from text, with a
+      Kullback-Leibler divergence loss as the constraint.
+      Experimental results show that KALL-E outperforms open-source implementations of YourTTS, VALL-E, NaturalSpeech 2,
+      and CosyVoice in terms of naturalness and speaker similarity in zero-shot TTS scenarios. Moreover, KALL-E
+      demonstrates exceptional zero-shot capabilities in expressiveness and accent transfer. Importantly, KALL-E
+      presents a more straightforward and effective paradigm for using continuous speech representations in TTS.
+    </p>
+
+    <div class="image-container">
+      <div class="image-box">
+        <img src="fig/KALL-E.png" width="50%" alt="Overview of the proposed KALL-E">
+        <p>Figure 1: The overview of KALL-E. Unlike discrete tokens-based language modeling approaches, KALL-E generates
+          continuous speech distributions conditioned on input texts and acoustic prompts, using a single-stage
+          decoder-only model as its foundational structure.</p>
+      </div>
+    </div>
+    <br><br>
+    <h2>2. Zero-shot TTS on the libriTTS teset-clean set<a name="synthesis0"></a></h2>
+    <h3>We conduct text-to-speech synthesis on the libriTTS test-clean set to show the capability of zero-shot voice
+      cloning.</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"><strong>Speaker Prompt</strong></th>
+          <th style="text-align: center"><strong>YourTTS</strong></th>
+          <th style="text-align: center"><strong>VALL-E</strong></th>
+          <th style="text-align: center"><strong>NaturalSPeech 2</strong></th>
+          <th style="text-align: center"><strong>CosyVoice</strong></th>
+          <th style="text-align: center"><strong>KALL-E</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: Receiving this unexpected good news, I can hardly believe it.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <br><br>
+
+    <h2>3. Zero-shot expressiveness transfer TTS on the ESD corpus<a name="synthesis1"></a></h2>
+    <h3>We conduct text-to-speech synthesis on the ESD corpus to show the capability of zero-shot expressiveness
+      transfer.</h3>
+
+    <br><br>
+    <h2>4. Zero-shot accent transfer TTS on the VCTK corpus<a name="synthesis2"></a></h2>
+    <h3>We conduct text-to-speech synthesis on the VCTK corpus to show the capability of zero-shot accent transfer.</h3>
+
+    <br><br>
+    <h2>5. Unconditional TTS<a name="synthesis3"></a></h2>
+    <h3>We conduct unconditional text-to-speech synthesis. Due to sampling from latent speech distributions, KALL-E can
+      generate diverse speech with various speaker timbres and speaking styles.</h3>
+
+    <br><br>
+
+    <h2>6. Celebrity imitation<a name="synthesis4"></a></h2>
+    <h3>KALL-E can imitate the voices of celebrities. We present these examples for purely research purposes.</h3>
+
+    <br><br>
+
+
+    <footer class="site-footer">
+
+      <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com/">GitHub
+          Pages</a>.</span>
+    </footer>
+  </section>
+</body>
+
+</html>
