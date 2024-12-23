@@ -47,8 +47,8 @@
     <ol>
       <li><a href="#abstract">Abstract</a></li>
       <li><a href="#synthesis0">Zero-shot TTS on the libriTTS teset-clean set</a></li>
-      <li><a href="#synthesis1">Zero-shot expressiveness transfer TTS on the ESD corpus</a></li>
-      <li><a href="#synthesis2">Zero-shot accent transfer TTS on the VCTK corpus</a></li>
+      <li><a href="#synthesis1">Zero-shot emotion cloning TTS on the ESD corpus</a></li>
+      <li><a href="#synthesis2">Zero-shot accent cloning TTS on the VCTK corpus</a></li>
       <li><a href="#synthesis3">Unconditional TTS</a></li>
       <li><a href="#synthesis4">Celebrity imitation</a></li>
     </ol>
@@ -64,7 +64,7 @@
       Kullback-Leibler divergence loss as the constraint.
       Experimental results show that KALL-E outperforms open-source implementations of YourTTS, VALL-E, NaturalSpeech 2,
       and CosyVoice in terms of naturalness and speaker similarity in zero-shot TTS scenarios. Moreover, KALL-E
-      demonstrates exceptional zero-shot capabilities in expressiveness and accent transfer. Importantly, KALL-E
+      demonstrates exceptional zero-shot capabilities in emotion and accent cloning. Importantly, KALL-E
       presents a more straightforward and effective paradigm for using continuous speech representations in TTS.
     </p>
 
@@ -83,7 +83,7 @@
     <table>
       <thead>
         <tr>
-          <th style="text-align: center"><strong>Speaker Prompt</strong></th>
+          <th style="text-align: center"><strong>Prompt Speech</strong></th>
           <th style="text-align: center"><strong>YourTTS</strong></th>
           <th style="text-align: center"><strong>VALL-E</strong></th>
           <th style="text-align: center"><strong>NaturalSPeech 2</strong></th>
@@ -93,41 +93,643 @@
       </thead>
       <tbody>
         <tr>
-          <td style="text-align: left" colspan=6>Text: Receiving this unexpected good news, I can hardly believe it.
+          <td style="text-align: left" colspan=6>Text: Again he searched his own thoughts; nor ineffectually as before.
           </td>
         </tr>
         <tr>
-          <td style="text-align: left"><audio src="samples/" controls=""
+          <td style="text-align: left"><audio src="samples/libritts/prompts/121_121726_000025_000000.wav" controls=""
               preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/" controls=""
+          <td style="text-align: left"><audio src="samples/libritts/yourtts/31____121_121726_000025_000000.wav" controls=""
               preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/" controls=""
+          <td style="text-align: left"><audio src="samples/libritts/valle/31____121_121726_000025_000000.wav" controls=""
               preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/" controls=""
+          <td style="text-align: left"><audio src="samples/libritts/ns2/31____121_121726_000025_000000.wav" controls=""
               preload=""></audio>
           </td>
-          <td style="text-align: left"><audio src="samples/" controls=""
+          <td style="text-align: left"><audio src="samples/libritts/cosyvoice/31____121.wav" controls=""
               preload=""></audio>
-          <td style="text-align: left"><audio src="samples/" controls=""
+          <td style="text-align: left"><audio src="samples/libritts/kalle/121_121726_000025_0000000.wav" controls=""
               preload=""></audio>
           </td>
         </tr>
-
+        <tr>
+          <td style="text-align: left" colspan=6>Text: Again he searched his own thoughts; nor ineffectually as before.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/libritts/prompts/237_126133_000014_000000.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/yourtts/31____237_126133_000014_000000.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/valle/31____237_126133_000014_000000.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/ns2/31____237_126133_000014_000000.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/cosyvoice/31____237.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/libritts/kalle/237_126133_000014_0000000.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: Again he searched his own thoughts; nor ineffectually as before.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/libritts/prompts/3575_170457_000037_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/yourtts/31____3575_170457_000037_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/valle/31____3575_170457_000037_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/ns2/31____3575_170457_000037_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/cosyvoice/31____3575.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/libritts/kalle/3575_170457_000037_0000020.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: Again he searched his own thoughts; nor ineffectually as before.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/libritts/prompts/7127_75947_000055_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/yourtts/31____7127_75947_000055_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/valle/31____7127_75947_000055_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/ns2/31____7127_75947_000055_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/cosyvoice/31____7127.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/libritts/kalle/7127_75947_000055_0000020.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: Again he searched his own thoughts; nor ineffectually as before.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/libritts/prompts/8230_279154_000029_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/yourtts/31____8230_279154_000029_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/valle/31____8230_279154_000029_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/ns2/31____8230_279154_000029_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/cosyvoice/31____8230.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/libritts/kalle/8230_279154_000029_0000020.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: We recognize our friend Jones, we know cats and dogs when we see them, and so on.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/libritts/prompts/121_121726_000025_000000.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/yourtts/76____121_121726_000025_000000.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/valle/76____121_121726_000025_000000.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/ns2/76____121_121726_000025_000000.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/cosyvoice/76____121.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/libritts/kalle/121_121726_000025_0000007.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: We recognize our friend Jones, we know cats and dogs when we see them, and so on.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/libritts/prompts/237_126133_000014_000000.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/yourtts/76____237_126133_000014_000000.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/valle/76____237_126133_000014_000000.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/ns2/76____237_126133_000014_000000.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/cosyvoice/76____237.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/libritts/kalle/237_126133_000014_0000007.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: We recognize our friend Jones, we know cats and dogs when we see them, and so on.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/libritts/prompts/3575_170457_000037_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/yourtts/76____3575_170457_000037_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/valle/76____3575_170457_000037_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/ns2/76____3575_170457_000037_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/cosyvoice/76____3575.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/libritts/kalle/3575_170457_000037_0000027.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: We recognize our friend Jones, we know cats and dogs when we see them, and so on.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/libritts/prompts/7127_75947_000055_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/yourtts/76____7127_75947_000055_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/valle/76____7127_75947_000055_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/ns2/76____7127_75947_000055_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/cosyvoice/76____7127.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/libritts/kalle/7127_75947_000055_0000027.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: We recognize our friend Jones, we know cats and dogs when we see them, and so on.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/libritts/prompts/8230_279154_000029_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/yourtts/76____8230_279154_000029_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/valle/76____8230_279154_000029_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/ns2/76____8230_279154_000029_000002.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/libritts/cosyvoice/76____8230.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/libritts/kalle/8230_279154_000029_0000027.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
       </tbody>
     </table>
 
     <br><br>
 
-    <h2>3. Zero-shot expressiveness transfer TTS on the ESD corpus<a name="synthesis1"></a></h2>
-    <h3>We conduct text-to-speech synthesis on the ESD corpus to show the capability of zero-shot expressiveness
-      transfer.</h3>
-
+    <h2>3. Zero-shot emotion cloning TTS on the ESD corpus<a name="synthesis1"></a></h2>
+    <h3>We conduct text-to-speech synthesis on the ESD corpus to show the capability of zero-shot emotion
+      cloning.</h3>
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align: center"><strong>Prompt Speech</strong></th>
+            <th style="text-align: center"><strong>YourTTS</strong></th>
+            <th style="text-align: center"><strong>VALL-E</strong></th>
+            <th style="text-align: center"><strong>NaturalSPeech 2</strong></th>
+            <th style="text-align: center"><strong>CosyVoice</strong></th>
+            <th style="text-align: center"><strong>KALL-E</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: left" colspan=6>Text: Old women always like rascals.
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left"><audio src="samples/esd/prompts/0017_000363.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/yourtts/44____0017_000363.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/valle/44____0017_000363.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/ns2/44____0017_000363.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/cosyvoice/44_0017.wav" controls=""
+                preload=""></audio>
+            <td style="text-align: left"><audio src="samples/esd/kalle/0017_0003639.wav" controls=""
+                preload=""></audio>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left" colspan=6>Text: The applause continued so long that the comte had ample leisure to join the king.
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left"><audio src="samples/esd/prompts/0017_000713.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/yourtts/33____0017_000814.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/valle/33____0017_000814.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/ns2/33____0017_000814.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/cosyvoice/33_0017.wav" controls=""
+                preload=""></audio>
+            <td style="text-align: left"><audio src="samples/esd/kalle/0017_0007135.wav" controls=""
+                preload=""></audio>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left" colspan=6>Text: He worked me very hard; he wanted to be beating me all the time.
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left"><audio src="samples/esd/prompts/0017_001063.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/yourtts/34____0017_001070.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/valle/34____0017_001070.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/ns2/34____0017_001070.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/cosyvoice/34_0017.wav" controls=""
+                preload=""></audio>
+            <td style="text-align: left"><audio src="samples/esd/kalle/0017_0010636.wav" controls=""
+                preload=""></audio>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left" colspan=6>Text: Yes; but perhaps I frightened her.
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left"><audio src="samples/esd/prompts/0017_001413.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/yourtts/25____0017_001720.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/valle/25____0017_001720.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/ns2/25____0017_001720.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/cosyvoice/25_0017.wav" controls=""
+                preload=""></audio>
+            <td style="text-align: left"><audio src="samples/esd/kalle/0017_0014131.wav" controls=""
+                preload=""></audio>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left" colspan=6>Text: Old women always like rascals.
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left"><audio src="samples/esd/prompts/0013_000363.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/yourtts/44____0013_000390.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/valle/44____0013_000390.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/ns2/44____0013_000390.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/cosyvoice/44_0013.wav" controls=""
+                preload=""></audio>
+            <td style="text-align: left"><audio src="samples/esd/kalle/0013_0003639.wav" controls=""
+                preload=""></audio>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left" colspan=6>Text: The applause continued so long that the comte had ample leisure to join the king.
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left"><audio src="samples/esd/prompts/0013_000713.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/yourtts/33____0013_000713.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/valle/33____0013_000713.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/ns2/33____0013_000713.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/cosyvoice/33_0013.wav" controls=""
+                preload=""></audio>
+            <td style="text-align: left"><audio src="samples/esd/kalle/0013_0007135.wav" controls=""
+                preload=""></audio>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left" colspan=6>Text: He worked me very hard; he wanted to be beating me all the time.
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left"><audio src="samples/esd/prompts/0013_001063.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/yourtts/34____0013_001100.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/valle/34____0013_001100.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/ns2/34____0013_001100.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/cosyvoice/34_0013.wav" controls=""
+                preload=""></audio>
+            <td style="text-align: left"><audio src="samples/esd/kalle/0013_0010636.wav" controls=""
+                preload=""></audio>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left" colspan=6>Text: Yes; but perhaps I frightened her.
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align: left"><audio src="samples/esd/prompts/0013_001413.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/yourtts/25____0013_001674.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/valle/25____0013_001674.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/ns2/25____0013_001674.wav" controls=""
+                preload=""></audio>
+            </td>
+            <td style="text-align: left"><audio src="samples/esd/cosyvoice/25_0013.wav" controls=""
+                preload=""></audio>
+            <td style="text-align: left"><audio src="samples/esd/kalle/0013_0014131.wav" controls=""
+                preload=""></audio>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
     <br><br>
-    <h2>4. Zero-shot accent transfer TTS on the VCTK corpus<a name="synthesis2"></a></h2>
-    <h3>We conduct text-to-speech synthesis on the VCTK corpus to show the capability of zero-shot accent transfer.</h3>
+    <h2>4. Zero-shot accent cloning TTS on the VCTK corpus<a name="synthesis2"></a></h2>
+    <h3>We conduct text-to-speech synthesis on the VCTK corpus to show the capability of zero-shot accent cloning.</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: center"><strong>Prompt Speech</strong></th>
+          <th style="text-align: center"><strong>YourTTS</strong></th>
+          <th style="text-align: center"><strong>VALL-E</strong></th>
+          <th style="text-align: center"><strong>NaturalSPeech 2</strong></th>
+          <th style="text-align: center"><strong>CosyVoice</strong></th>
+          <th style="text-align: center"><strong>KALL-E</strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: They have all grown very smart.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/vctk/prompts/p245_101.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/yourtts/2____p245_101_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/valle/2____p245_101_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/ns2/2____p245_101_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/cosyvoice/2____p245.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/vctk/kalle/p245_1011.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: They have all grown very smart.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/vctk/prompts/p248_216.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/yourtts/2____p248_216_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/valle/2____p248_216_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/ns2/2____p248_216_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/cosyvoice/2____p248.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/vctk/kalle/p248_2161.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: They have all grown very smart.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/vctk/prompts/p253_287.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/yourtts/2____p253_287_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/valle/2____p253_287_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/ns2/2____p253_287_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/cosyvoice/2____p253.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/vctk/kalle/p253_2871.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: They have all grown very smart.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/vctk/prompts/p326_039.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/yourtts/2____p326_039_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/valle/2____p326_039_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/ns2/2____p326_039_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/cosyvoice/2____p326.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/vctk/kalle/p326_0391.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: One could easily fix his type; it never, happily, dies out.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/vctk/prompts/p245_101.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/yourtts/18____p245_101_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/valle/18____p245_101_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/ns2/18____p245_101_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/cosyvoice/18_____p245.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/vctk/kalle/p245_1019.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: One could easily fix his type; it never, happily, dies out.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/vctk/prompts/p248_216.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/yourtts/18____p248_216_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/valle/18____p248_216_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/ns2/18____p248_216_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/cosyvoice/18____p248.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/vctk/kalle/p248_2169.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: One could easily fix his type; it never, happily, dies out.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/vctk/prompts/p253_287.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/yourtts/18____p253_287_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/valle/18____p253_287_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/ns2/18____p253_287_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/cosyvoice/18____p253.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/vctk/kalle/p253_2879.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left" colspan=6>Text: One could easily fix his type; it never, happily, dies out.
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: left"><audio src="samples/vctk/prompts/p326_039.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/yourtts/18____p326_039_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/valle/18____p326_039_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/ns2/18____p326_039_gt.wav" controls=""
+              preload=""></audio>
+          </td>
+          <td style="text-align: left"><audio src="samples/vctk/cosyvoice/18____p326.wav" controls=""
+              preload=""></audio>
+          <td style="text-align: left"><audio src="samples/vctk/kalle/p326_0399.wav" controls=""
+              preload=""></audio>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
     <br><br>
     <h2>5. Unconditional TTS<a name="synthesis3"></a></h2>
